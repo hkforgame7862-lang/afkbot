@@ -6,7 +6,7 @@ function createBot() {
     port: 25565,
     username: 'Kythox_',
     auth: 'offline',
-    version: '1.21.4'
+    version: '1.8.9'
   });
 
   bot.on('spawn', () => {
