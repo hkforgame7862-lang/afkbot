@@ -6,7 +6,7 @@ function createBot() {
     port: 25565,
     username: 'Kythox_',
     auth: 'offline',
-    version: false,        // auto detect version
+    version: false,
     hideErrors: false
   });
 
@@ -26,13 +26,13 @@ function createBot() {
 
   bot.on('kicked', (reason) => {
     console.log('Kicked:', reason);
-    setTimeout(createBot, 5000);
+    setTimeout(createBot, 30000);  // wait 30 seconds
   });
   bot.on('error', (err) => {
     console.log('Error:', err.message);
-    setTimeout(createBot, 5000);
+    setTimeout(createBot, 30000);  // wait 30 seconds
   });
-  bot.on('end', () => setTimeout(createBot, 5000));
+  bot.on('end', () => setTimeout(createBot, 30000));  // wait 30 seconds
 }
 
 createBot();
