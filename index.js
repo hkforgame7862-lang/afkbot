@@ -2,9 +2,9 @@ const mineflayer = require('mineflayer');
 
 function createBot() {
   const bot = mineflayer.createBot({
-    host: 'SERVER IP HERE',
+    host: 'bananasmp.net',
     port: 25565,
-    username: 'YOUR USERNAME HERE',
+    username: 'Kythox_',
     auth: 'offline',
     version: '1.20.1'
   });
