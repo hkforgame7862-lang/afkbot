@@ -14,11 +14,21 @@ function createBot() {
 
   bot.on('spawn', () => {
     console.log('Spawned!');
+
+    // Auto login
+    setTimeout(() => {
+      bot.chat('/login hassan123pass0');
+      console.log('Logged in!');
+    }, 2000);
+
+    // Join randomkits
     setTimeout(() => {
       bot.chat('/server randomkits');
-    }, 3000);
+      console.log('Joined RandomKits!');
+    }, 5000);
   });
 
+  // Anti-AFK
   setInterval(() => {
     bot.setControlState('sneak', true);
     setTimeout(() => bot.setControlState('sneak', false), 1000);
@@ -26,13 +36,13 @@ function createBot() {
 
   bot.on('kicked', (reason) => {
     console.log('Kicked:', reason);
-    setTimeout(createBot, 30000);  // wait 30 seconds
+    setTimeout(createBot, 30000);
   });
   bot.on('error', (err) => {
     console.log('Error:', err.message);
-    setTimeout(createBot, 30000);  // wait 30 seconds
+    setTimeout(createBot, 30000);
   });
-  bot.on('end', () => setTimeout(createBot, 30000));  // wait 30 seconds
+  bot.on('end', () => setTimeout(createBot, 30000));
 }
 
 createBot();
